@@ -1,7 +1,6 @@
 // ==WindhawkMod==
-// @id              explorer-ctrlq-newfile
-// @name            Explorer Ctrl+Q to New File
-// @name:zh-CN      Create new file with Ctrl+Q
+// @id              explorer-ctrlq-new-folder
+// @name            Explorer Ctrl+Q to New Folder
 // @description     Press Ctrl+Q in Explorer and create a new folder in current path, including desktop.
 // @version         1.2
 // @author          TheShadyRainbow4
@@ -283,7 +282,6 @@ static void SelectAndRenameInWindow(HWND hwndExplorer, const std::wstring& fullP
     IShellFolder* pParent = nullptr;
     PCUITEMID_CHILD pChild = nullptr;
     if (BindParentAndChildPIDL(fullPath, &pParent, &pChild)) {
-        // This is where it was crashing - added safety
         psv->SelectItem(pChild, SVSI_SELECT | SVSI_ENSUREVISIBLE | SVSI_DESELECTOTHERS | SVSI_EDIT);
         pParent->Release();
     }
